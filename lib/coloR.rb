@@ -8,11 +8,9 @@ module ColoR
   # Your code goes here...
 
   def self.get_complementary_color(color)
-    if hex?(color)
-      puts "Valid Hex Color s"
-    else
-      raise Error.new "Not a valid Hex Color"
-    end
+    raise Error.new "Not a valid Hex Color" unless hex?(color)
+
+    puts "Valid Hex Color s"
   end
 
   def self.hex?(color)
