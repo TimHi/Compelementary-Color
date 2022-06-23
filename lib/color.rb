@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "coloR/version"
+require_relative "color/version"
 
 # Offering functionality to get the complementary colors of a given input.
 module ColoR
