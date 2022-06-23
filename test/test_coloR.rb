@@ -8,6 +8,6 @@ class TestColoR < Minitest::Test
   end
 
   def test_get_complementary_color
-    assert false
+    ::ColoR.get_complementary_color("#eb4034")
   end
 end

@@ -10,7 +10,7 @@ module ColoR
   def self.get_complementary_color(color)
     raise Error.new "Not a valid Hex Color" unless hex?(color)
 
-    puts "Valid Hex Color s"
+    puts "Valid Hex Color"
   end
 
   def self.hex?(color)
