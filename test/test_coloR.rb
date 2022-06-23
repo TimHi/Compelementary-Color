@@ -7,7 +7,7 @@ class TestColoR < Minitest::Test
     refute_nil ::ColoR::VERSION
   end
 
-  def test_it_does_something_useful
+  def test_get_complementary_color
     assert false
   end
 end

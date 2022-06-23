@@ -25,3 +25,21 @@ jobs:
         bundler-cache: true
     - name: Run the default task
       run: bundle exec rake
+
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    strategy:
+    matrix:
+      ruby:
+        - '3.0.3'
+    
+    steps:
+    - uses: actions/checkout@v3
+        - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
+        bundler-cache: true
+    - name: Run the rake test task
+      run: rake test
