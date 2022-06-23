@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in coloR.gemspec
+# Specify your gem's dependencies in color.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

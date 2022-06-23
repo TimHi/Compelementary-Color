@@ -16,6 +16,10 @@ class TestColoR < Minitest::Test
       assert(::ColoR.hex?(valid_hex_code))
     end
 
+    define_method("test_get_complementary_#{valid_hex_code}") do
+      assert false
+    end
+
     # Test wether a given invalid Hexcode is recognized as such.
     # Arrange: Get the code from the array
     # Act: Call hex?
