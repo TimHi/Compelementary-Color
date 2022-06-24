@@ -6,3 +6,6 @@ require "color/rgb"
 require "color/hex"
 
 require "minitest/autorun"
+
+require "simplecov"
+SimpleCov.start
