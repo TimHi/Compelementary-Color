@@ -8,4 +8,8 @@ module Hex
     short_hex_color.each_char { |c| long_hex_color << (c * 2) unless c == "#" }
     long_hex_color.downcase
   end
+
+  def self.hex?(color)
+    color.match("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
+  end
 end
