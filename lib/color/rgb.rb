@@ -6,9 +6,13 @@ require "color/hex"
 module RGB
   def self.hex_to_rgb(hex_color)
     hex_color = Hex.fill_hex_color(hex_color) if hex_color.length == 4 # Length 4 => #aac
-    [(hex_color[1].to_i(16) * 16) + hex_color[2].to_i(16),
-     (hex_color[3].to_i(16) * 16) + hex_color[4].to_i(16),
-     (hex_color[5].to_i(16) * 16) + hex_color[6].to_i(16)]
+    [hex_to_dec(hex_color[1..2]),
+     hex_to_dec(hex_color[3..4]),
+     hex_to_dec(hex_color[5..6])]
+  end
+
+  def self.hex_to_dec(hex)
+    (hex[0].to_i(16) * 16) + hex[1].to_i(16)
   end
 
   def self.rgb_to_hex(rgb_color)
