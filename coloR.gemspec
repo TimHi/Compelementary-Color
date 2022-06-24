@@ -3,7 +3,7 @@
 require_relative "lib/color/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "coloR"
+  spec.name = "Complementary_Color"
   spec.version = ColoR::VERSION
   spec.authors = ["Tim Hiller"]
   spec.email = ["TimHiller@live.de"]
@@ -12,8 +12,6 @@ Gem::Specification.new do |spec|
   spec.description = "Create complementary colors based on a given color."
   spec.homepage = "https://github.com/TimHi/coloR"
   spec.required_ruby_version = ">= 2.6.0"
-
-  spec.metadata["allowed_push_host"] = "https://github.com/TimHi/coloR/blob/main/CHANGELOG.md"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/TimHi/coloR"
