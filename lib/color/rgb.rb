@@ -12,7 +12,8 @@ module RGB
   end
 
   def self.rgb_to_hex(rgb_color)
-    "#".dup << convert_decimal_to_2_digit_hex(rgb_color[0]) << convert_decimal_to_2_digit_hex(rgb_color[1]) << convert_decimal_to_2_digit_hex(rgb_color[2])
+    hex = "#".dup << convert_decimal_to_2_digit_hex(rgb_color[0])
+    hex << convert_decimal_to_2_digit_hex(rgb_color[1]) << convert_decimal_to_2_digit_hex(rgb_color[2])
   end
 
   def self.convert_decimal_to_2_digit_hex(dec)
