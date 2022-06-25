@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Tim Hiller"]
   spec.email = ["TimHiller@live.de"]
 
-  spec.summary = "Create complementary colors based on a given color."
+  spec.summary = "Generate complementary colors based on a given color."
   spec.description = "Create complementary colors based on a given color."
   spec.homepage = "https://github.com/TimHi/coloR"
   spec.required_ruby_version = ">= 2.6.0"
@@ -33,5 +33,5 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
-  spec.metadata["rubygems_mfa_required"] = "false"
+  spec.metadata["rubygems_mfa_required"] = "true"
 end
