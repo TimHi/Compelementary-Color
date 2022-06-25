@@ -9,7 +9,12 @@ module Hex
     long_hex_color.downcase
   end
 
-  def self.hex?(color)
-    color.match("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
+  # Test wether a given color is a valid hex color.
+  def self.hex?(color_to_test)
+    if color_to_test.is_a? String
+      color_to_test.match("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$")
+    else
+      false
+    end
   end
 end
