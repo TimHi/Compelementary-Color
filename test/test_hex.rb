@@ -24,15 +24,14 @@ class TestHex < Minitest::Test
     define_method("test_#{valid_hex_code}_is_valid_hex_code") do
       assert(::Hex.hex?(valid_hex_code))
     end
-
-    # Test wether a given invalid Hexcode is recognized as such.
-    # Arrange: Get the code from the array
-    # Act: Call hex?
-    # Assert: Verify the color is recognized correctly as a invalid hex code.
-    %w[#ab #AAasdC #18000 # 000000 #F0000 #00!F? #0000FF! #FFFkFFF #OPA].each do |invalid_hex_code|
-      define_method("test_#{invalid_hex_code}_is_valid_hex_code") do
-        assert(!::Hex.hex?(invalid_hex_code))
-      end
+  end
+  # Test wether a given invalid Hexcode is recognized as such.
+  # Arrange: Get the code from the array
+  # Act: Call hex?
+  # Assert: Verify the color is recognized correctly as a invalid hex code.
+  %w[#ab #AAasdC #18000 # 000000 #F0000 #00!F? #0000FF! #FFFkFFF #OPA].each do |invalid_hex_code|
+    define_method("test_#{invalid_hex_code}_is_invalid_hex_code") do
+      assert(!::Hex.hex?(invalid_hex_code))
     end
   end
 end
