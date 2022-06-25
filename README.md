@@ -1,5 +1,8 @@
 # ColoR
 
+[![Gem Version](https://badge.fury.io/rb/Complementary_Color.svg)](https://badge.fury.io/rb/Complementary_Color)
+[![Test + Lint](https://github.com/TimHi/Compelementary-Color/actions/workflows/main.yml/badge.svg)](https://github.com/TimHi/Compelementary-Color/actions/workflows/main.yml)
+
 ColoR's main aspect is the creation of complementary color palettes. It also offers RGB to hex conversions.
 
 ## Installation
