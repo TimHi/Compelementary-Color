@@ -2,6 +2,13 @@
 
 - First functionality added
 
+## [0.8.0](https://www.github.com/TimHi/Compelementary-Color/compare/v0.7.0...v0.8.0) (2022-06-25)
+
+
+### Features
+
+* dummy commit to test action ([118bcef](https://www.github.com/TimHi/Compelementary-Color/commit/118bcef01b36ed27610a9f1157fb796edfa53791))
+
 ## [0.7.0](https://www.github.com/TimHi/Compelementary-Color/compare/v0.6.0...v0.7.0) (2022-06-25)
 
 
