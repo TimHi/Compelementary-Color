@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Create complementary colors based on a given color."
   spec.homepage = "https://github.com/TimHi/coloR"
   spec.required_ruby_version = ">= 2.6.0"
-
+  spec.license = "AGPL-3.0-or-later"
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/TimHi/coloR"
   spec.metadata["changelog_uri"] = "https://github.com/TimHi/coloR/blob/main/CHANGELOG.md"
@@ -33,5 +33,5 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
-  spec.metadata["rubygems_mfa_required"] = "true"
+  spec.metadata["rubygems_mfa_required"] = "false"
 end
