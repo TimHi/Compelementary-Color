@@ -18,6 +18,13 @@ class TestColoR < Minitest::Test
     end
   end
 
+  { "#abc" => "#554433", "#ABC" => "#554433", "#000" => "#ffffff", "#ff0000" => "#00ffff", "#00ff00" => "#ff00ff",
+    "#0000ff" => "#ffff00", "#ffffff" => "#000000" }.each do |color_input, expected|
+    define_method("test_get_monochromatic_#{color_input}") do
+      assert_equal(expected, ::ColoR.get_monochromatic_color(color_input))
+    end
+  end
+
   # Test to verify invalid string inputs are detected and handled with an custom HexCodeError
   # Arrange: Get value from list
   # Act: Call ColoR.get_complementary_color
