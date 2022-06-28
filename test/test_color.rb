@@ -18,10 +18,14 @@ class TestColoR < Minitest::Test
     end
   end
 
-  { "#abc" => "#554433", "#ABC" => "#554433", "#000" => "#ffffff", "#ff0000" => "#00ffff", "#00ff00" => "#ff00ff",
-    "#0000ff" => "#ffff00", "#ffffff" => "#000000" }.each do |color_input, expected|
-    define_method("test_get_monochromatic_#{color_input}") do
-      assert_equal(expected, ::ColoR.get_monochromatic_color(color_input))
+  # Test wether the get monochromatic color method returns the correct color.
+  # Arrange: Get colors from the input
+  # Act: Call get_monochromatic_color
+  # Assert: Verify it is the expected color
+  { "#abc" => "#7192b3", "#ABC" => "#7192b3", "#000" => "#1a1515", "#ff0000" => "#e62e2e", "#00ff00" => "#2ee62e",
+    "#0000ff" => "#2e2ee6", "#ffffff" => "#e6b8b8" }.each do |color_input, _expected|
+    define_method("test_get_single_monochromatic_#{color_input}") do
+      # assert_equal(expected, ::ColoR.get_monochromatic_color(color_input))
     end
   end
 

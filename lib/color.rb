@@ -15,10 +15,12 @@ module ColoR
     ::RGB.rgb_to_hex(comp_r)
   end
 
-  def self.get_monochromatic_color(color, count = 1)
+  def self.get_monochromatic_color(color)
     raise HexCodeError.new("Not a valid Hex Color"), color unless ::Hex.hex?(color)
 
     rgb_color = ::RGB.hex_to_rgb(color)
-    hsv_color = ::HSV.rgb_to_hsv(rgb_color)
+    hue_color = ::HSV.rgb_to_hsv(rgb_color)
+    mono_color = ::HSV.calculate_monochromatic_color(hue_color)
+    puts mono_color
   end
 end
