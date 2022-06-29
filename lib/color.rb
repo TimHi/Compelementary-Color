@@ -22,7 +22,6 @@ module ColoR
     hue_color = ::HSV.rgb_to_hsv(rgb_color)
     mono_color = ::HSV.calculate_monochromatic_color(hue_color)
     mono_rgb = ::HSV.hsv_to_rgb(mono_color[0], mono_color[1], mono_color[2])
-    puts mono_rgb
     ::RGB.rgb_to_hex(mono_rgb)
   end
 end

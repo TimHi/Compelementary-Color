@@ -6,8 +6,8 @@ module HSV
   RGB_MAX_VALUE = 255
   ROUND_VALUE = 3
   FULL_CIRCLE_DEG = 360
-  MONO_SATURATION = 0.15
-  MONO_VALUE = 0.05
+  MONO_SATURATION = 0.2
+  MONO_VALUE = 0.1
 
   # Hex Colors can be represented with three characters, to work
   def self.rgb_to_hsv(rgb_color)
@@ -21,7 +21,7 @@ module HSV
     max_min_diff = max - min
     hue = calculate_hue(r, g, b, max_min_diff)
     hue += FULL_CIRCLE_DEG if hue.negative?
-    [hue, calculate_saturation(max_min_diff, max, value), value]
+    [hue.round, calculate_saturation(max_min_diff, max, value), value]
   end
 
   def self.calculate_saturation(max_min_diff, max, value)
@@ -45,16 +45,20 @@ module HSV
   end
 
   def self.calculate_raw_hue_value(offset, first_color, second_color, max_min_diff)
-    (offset + (first_color - second_color).to_f) / max_min_diff.round(ROUND_VALUE)
+    offset + ((first_color - second_color).to_f / max_min_diff).round(ROUND_VALUE)
   end
 
   # Calculate the a monochromatic value to a given color
   def self.calculate_monochromatic_color(hue_color)
     saturation = hue_color[1]
     value = hue_color[2]
-    saturation -= MONO_SATURATION
+    if saturation > 0.7
+      saturation -= MONO_SATURATION
+    else
+      saturation += MONO_SATURATION
+    end
     value -= MONO_VALUE
-    [hue_color[0], saturation, value]
+    [hue_color[0], saturation.round(ROUND_VALUE), value]
   end
 
   # rubocop:disable Metrics/AbcSize
@@ -97,7 +101,7 @@ module HSV
       green = p
       blue = q
     end
-    [(red * RGB_MAX_VALUE).round, (green * RGB_MAX_VALUE).round, (blue * RGB_MAX_VALUE).round]
+    [(red * RGB_MAX_VALUE).round.abs, (green * RGB_MAX_VALUE).round.abs, (blue * RGB_MAX_VALUE).round.abs]
   end
   # rubocop:enable Metrics/AbcSize
   # rubocop:enable Metrics/MethodLength

@@ -16,4 +16,12 @@ class TestHHSV < Minitest::Test
       assert_equal(expected_rgb_color, ::HSV.hsv_to_rgb(hsv_color[0], hsv_color[1], hsv_color[2]))
     end
   end
+
+  { [0, 0, 0] => [0, 0.2, -0.1], [10, 0, 0] => [10, 0.2, -0.1], [360, 0.8, 1] => [360, 0.6, 0.9],
+    [360, 0.7, 1] => [360, 0.9, 0.9], [360, 0.69, 1] => [360, 0.89, 0.9],
+    [360, 0.71, 1] => [360, 0.51, 0.9] }.each do |hsv_color, expected_hsv_color|
+    define_method("test_#{hsv_color}_calculate_monochromatic_color") do
+      assert_equal(expected_hsv_color, ::HSV.calculate_monochromatic_color(hsv_color))
+    end
+  end
 end
