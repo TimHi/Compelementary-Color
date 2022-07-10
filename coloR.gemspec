@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["TimHiller@live.de"]
   spec.summary = "Generate aesthetic pleasing color schemes."
   spec.description = "Generate aesthetic pleasing color schemes. Current options are the complementary color to a given
-  input, the monochromatic version to a given color and to generate two analogues colors to a given one. The gem also 
+  input, the monochromatic version to a given color and to generate two analogues colors to a given one. The gem also
   offers various conversions between the different color models."
   spec.homepage = "https://github.com/TimHi/coloR"
   spec.required_ruby_version = ">= 2.6.0"
