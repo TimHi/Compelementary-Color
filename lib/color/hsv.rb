@@ -9,6 +9,14 @@ module HSV
   MONO_SATURATION = 0.2
   MONO_VALUE = 0.1
 
+  # Add a value to the hue component of a hsv color
+  # Ensures that the hue is still in the range 0..360
+  def self.add_hue_to_hsv(hue_value, hsv_color_to_add)
+    hsv_color_to_add[0] += hue_value
+    hsv_color_to_add[0] %= FULL_CIRCLE_DEG
+    hsv_color_to_add
+  end
+
   # Hex Colors can be represented with three characters, to work
   def self.rgb_to_hsv(rgb_color)
     max = rgb_color.max()

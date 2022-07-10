@@ -30,6 +30,29 @@ class TestColoR < Minitest::Test
     end
   end
 
+  # Test wether the hex to hsv method does the correct conversion.
+  # Arrange: Get colors from the input
+  # Act: Call hex_to_hsv
+  # Assert: Verify it is the expected conversion
+  { "#ff7f7f" => [0, 0.502, 1.0], "#ffbf7f" => [30, 0.502, 1.0], "#ff7fbf" => [330, 0.502, 1.0],
+    "#ff0900" => [2, 1.0, 1.0], "#ff8800" => [32, 1.0, 1.0], "#ff0077" => [332, 1.0, 1.0],
+    "#ccbea3" => [40, 0.201, 0.8], "#c5cca3" => [70, 0.201, 0.8],
+    "#ccaaa3" => [10, 0.201, 0.8] }.each do |color_input, expected|
+    define_method("test_hex_to_hsv_#{color_input}") do
+      assert_equal(expected, ::ColoR.hex_to_hsv(color_input))
+    end
+  end
+
+  # Test wether the get analogous color method returns the correct color.
+  # Arrange: Get colors from the input
+  # Act: Call get_analogous_scheme
+  # Assert: Verify it is the expected colors
+  { "#ff7f7f" => ["#ff9f7f", "#ff7fbf"], "#ccbea3" => ["#ccc9a3", "#ccaaa3"] }.each do |color_input, expected|
+    define_method("test_get_analogous_scheme_#{color_input}") do
+      assert_same_elements(expected, ::ColoR.get_analogous_scheme(color_input))
+    end
+  end
+
   # Test to verify invalid string inputs are detected and handled with an custom HexCodeError
   # Arrange: Get value from list
   # Act: Call ColoR.get_complementary_color

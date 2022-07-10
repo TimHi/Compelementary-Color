@@ -9,4 +9,5 @@ require "color/hsv"
 require "minitest/autorun"
 
 require "simplecov"
+require "shoulda"
 SimpleCov.start
