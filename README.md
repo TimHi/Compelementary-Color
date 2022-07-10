@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/Complementary_Color.svg)](https://badge.fury.io/rb/Complementary_Color)
 [![Test + Lint](https://github.com/TimHi/Compelementary-Color/actions/workflows/main.yml/badge.svg)](https://github.com/TimHi/Compelementary-Color/actions/workflows/main.yml)
 
-ColoR's main aspect is the creation of complementary color palettes. It also offers RGB to hex conversions.
+ColoR's main aspect is the creation of aesthetic pleasing color schemes. Also offers various conversions between the color models.
 
 ## Installation
 
@@ -17,7 +17,19 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-Call `ColoR.get_complementary_color(hex_color)`and pass a valid hex color.
+Implemented are three options:
+
+### Get Complementary color  
+
+Call `::Color.get_complementary_color(hex_color)` to retrieve the complementary color.  
+
+### Get monochromatic color  
+
+Call `::Color.get_monochromatic_color(hex_color)` to retrieve the monochromatic color.  
+
+### Get analogous colors  
+
+Call `::Color.get_analogous_scheme(hex_color)` to retrieve two colors analogue to the given one.  
 
 ## Development
 
